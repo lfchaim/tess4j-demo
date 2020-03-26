@@ -7,6 +7,8 @@ import net.sourceforge.tess4j.TesseractException;
 
 public class OCRFull {
 
+	private static String dataPath = System.getProperty("data.path");
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		test2();
@@ -30,6 +32,7 @@ public class OCRFull {
 		try {
 			// tesseract.setDatapath("D:/DataScienceCollection/Jars/tessdata");
 			tesseract.setDatapath("d:/github/tesseract/tessdata");
+			//tesseract.setDatapath(dataPath);
 			tesseract.setLanguage("por");
 			String text = tesseract.doOCR(new File("D:/tmp/img/CNH/CNH Fernando Cinza 20181209.png"));
 			System.out.print(text);
